@@ -1,0 +1,16 @@
+<div *mobxAutorun class="transactions">
+  <div class="box-wrapper">
+    <div class="box">
+      <h2>deposits</h2>
+      <div *ngFor="let deposit of account.deposits">{{ deposit }}</div>
+    </div>
+    <div class="box">
+      <h2>withdrawls</h2>
+      <div *ngFor="let withdrawl of account.withdrawls">{{ withdrawl }}</div>
+    </div>
+    <div class="box">
+      <h2>all transactions</h2>
+      <div [class.negative]="deposit < 0" *ngFor="let deposit of account.transactions">{{ deposit }}</div>
+    </div>
+  </div>
+</div>

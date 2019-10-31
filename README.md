@@ -1,4 +1,35 @@
-# NgTodo
+Short quick version
+
+  nvm use
+  
+  npm install
+  
+  npm start
+
+###What is happening?
+  the magic is in src/app/stores/account.store.ts
+  
+  The data is an observable array of transacions,
+  a transaction is a number positive or negative.
+  the derived data from the transactions are 
+  balance, isNegative, withdrawls, and deposits.
+  Each of those functions has a decorator of @computed.
+  
+  The actions are in functions with @action decorator, deposit, withdrawl, clearHistory
+  
+  
+  The store is a service you inject into your components.
+  you surround your data with the *mobxAutorun directive
+  
+  evething just works after that checkout transactions.component.html
+  
+        <div *ngFor="let withdrawl of account.withdrawls">{{ withdrawl }}</div>
+  just loop the computed value "withdrawls" it will print out the
+  transactions that are negative and only get called when the data changes.
+  
+  
+
+# NgBank
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
 

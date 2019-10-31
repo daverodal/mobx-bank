@@ -1,0 +1,13 @@
+.box-wrapper{
+  display:flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  .box{
+    border: 1px solid #999;
+    padding:10px;
+    box-shadow: 3px 3px 3px #999;
+  }
+}
+.negative {
+  color: red;
+}
