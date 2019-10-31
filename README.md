@@ -1,5 +1,7 @@
 Short quick version
 
+  nvm install v10.16.3
+
   nvm use
   
   npm install
