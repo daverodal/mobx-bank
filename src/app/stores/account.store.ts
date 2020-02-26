@@ -23,10 +23,6 @@ export class Account {
     });
   }
 
-  @action clearHistory(){
-    localStorage.savedTransactions = '';
-    this.transactions = [];
-  }
   @computed get balance(): number {
     return sum(this.transactions);
   }
@@ -43,6 +39,9 @@ export class Account {
     return this.transactions.filter((t) => t < 0);
   }
 
+  /*
+   * 3 actions below deposit, withdraw and clearHistory
+   */
   @action deposit(money: number) {
     if (money) {
       this.transactions = [...this.transactions, money];
@@ -52,5 +51,8 @@ export class Account {
     if (money) {
       this.transactions = [...this.transactions, -money];
     }
+  }
+  @action clearHistory() {
+    this.transactions = [];
   }
 }
